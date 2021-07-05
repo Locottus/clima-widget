@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { 
   faCloud,faCloudMoon,faCloudMoonRain,faCloudRain,
   faCloudShowersHeavy,faCloudSun,faCloudSunRain,
-  faMoon,faSun,faThermometer,faWind,faEye
+  faMoon,faSun,faThermometer,faWind,faEye,faTint,
+  faArrowDown,
  } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -14,7 +15,8 @@ import {
   styleUrls: ['./widget.component.css']
 })
 export class WidgetComponent implements OnInit {
-
+  faarrowdown = faArrowDown;
+  fatint = faTint;
   facloud = faCloud;
   facloudmoon = faCloudMoon;
   facloudmoonrain = faCloudMoonRain;
@@ -28,9 +30,11 @@ export class WidgetComponent implements OnInit {
   fawind =faWind;
   faeye = faEye;
 
-
+  date = new Date();
   latitude = 0;
   longitude = 0;
+
+
   constructor() { }
 
 
@@ -40,7 +44,7 @@ export class WidgetComponent implements OnInit {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         console.log(position.coords.latitude,position.coords.longitude);
-        
+        console.log(this.date);
       });
     } else {
       console.log("Geolocation is not supported by this browser.");

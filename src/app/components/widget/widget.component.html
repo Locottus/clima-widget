@@ -8,30 +8,46 @@
     <div class="card">
         <div class="card-header">
             <h1>Guatemala, Ciudad</h1>
+            <p>Latitud: {{latitude}} Longitud: {{longitude}} </p>
           </div>
     
-          <div class="row">
-            <div class = "col">
-              <img class="card-img-top" src="/assets/rain.png" alt="Card disimage cap">
+          <div class="row ">
+            <div class = "col txt-center">
+              <img class="card-img-top  w-75" src="/assets/sun.png" alt="Card disimage cap">
+              <h1>23  ℃</h1>
             </div>
+
             <div class = "col">
-              <h1>23</h1>
-              <h2>dia soleado</h2>
-              <p>
-                linea 1 <br>
-                linea 2 <br>
-                linea 3 <br>
+                <h4>Datos Generales</h4>
+                <p>
+                <fa-icon [icon]="facloud"> </fa-icon> Nubosidad: 76 % <br>
+                <fa-icon [icon]="faeye"> </fa-icon> Visibilidad: 10000 m <br>
+                <fa-icon [icon]="fatint"> </fa-icon> Humedad: 62 % <br>
+                <fa-icon [icon]="faarrowdown"> </fa-icon> Presión: 1012 hPa <br>
+                <fa-icon [icon]="facloud"> </fa-icon> Altura a nivel del mar: 1012 m <br>
+                <fa-icon [icon]="facloud"> </fa-icon> Temperatura: 29.03 ℃ <br>
+                Max: 29.03 ℃ <br>
+                Min: 29.03 ℃ <br>
+                feels like: 31.4 ℃ <br>              
               </p>
             </div>
-            
+
+            <div class = "col">
+                <h4>Viento</h4>
+                <p>
+                  Grados: 78 ℃<br>
+                  Gust: 1.65<br>
+                  Velocidad: 1.03 m/s<br>
+                </p>
+            </div>
           </div>
         
       <div class="card-body">
-        <h1 class="card-title">Card title</h1>
+        <h1 class="card-title">Soleado</h1>
         <p class="card-text"> https://www.angularjswiki.com/fontawesome/ This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Actualizado: {{date}} </small>
       </div>
     </div>
 </div>
