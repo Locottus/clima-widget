@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetComponent } from './components/widget/widget.component';
+import { MiniWidgetComponent } from './components/mini-widget/mini-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WidgetComponent
+    WidgetComponent,
+    MiniWidgetComponent
   ],
   imports: [
     BrowserModule,
