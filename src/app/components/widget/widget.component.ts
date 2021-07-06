@@ -34,7 +34,20 @@ export class WidgetComponent implements OnInit {
   latitude = 0;
   longitude = 0;
 
+  nubosidad = 0;
+  visibilidad = 0;
+  humedad = 0;
+  presion = 0;
+  altura = 0;
+  temperatura = 0;
+  max = 0;
+  min = 0;
+  feels = 0;
+  vientoGrados = 0;
+  vientoGust = 0;
+  vientoVelocidad = 0;
 
+  climaDescripcion = '';
   constructor() { }
 
 

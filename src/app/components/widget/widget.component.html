@@ -14,36 +14,36 @@
           <div class="row ">
             <div class = "col txt-center">
               <img class="card-img-top  w-75" src="/assets/sun.png" alt="Card disimage cap">
-              <h1>23  ℃</h1>
+              <h1>{{temperatura}}  ℃</h1>
             </div>
 
             <div class = "col">
                 <h4>Datos Generales</h4>
                 <p>
-                <fa-icon [icon]="facloud"> </fa-icon> Nubosidad: 76 % <br>
-                <fa-icon [icon]="faeye"> </fa-icon> Visibilidad: 10000 m <br>
-                <fa-icon [icon]="fatint"> </fa-icon> Humedad: 62 % <br>
-                <fa-icon [icon]="faarrowdown"> </fa-icon> Presión: 1012 hPa <br>
-                <fa-icon [icon]="facloud"> </fa-icon> Altura a nivel del mar: 1012 m <br>
-                <fa-icon [icon]="facloud"> </fa-icon> Temperatura: 29.03 ℃ <br>
-                Max: 29.03 ℃ <br>
-                Min: 29.03 ℃ <br>
-                feels like: 31.4 ℃ <br>              
+                <!--<fa-icon [icon]="facloud"> </fa-icon> Nubosidad: 76 % <br>-->
+                Nubosidad: {{nubosidad}} % <br>
+                Visibilidad: {{visibilidad}} m <br>
+                Humedad: {{humedad}} % <br>
+                Presión: {{presion}} hPa <br>
+                Altura a nivel del mar: {{altura}} m <br>
+                Max: {{max}} ℃ <br>
+                Min: {{min}} ℃ <br>
+                feels like: {{feels}} ℃ <br>              
               </p>
             </div>
 
             <div class = "col">
                 <h4>Viento</h4>
                 <p>
-                  Grados: 78 ℃<br>
-                  Gust: 1.65<br>
-                  Velocidad: 1.03 m/s<br>
+                  Grados: {{vientoGrados}} <br>
+                  Gust: {{vientoGust}} <br>
+                  Velocidad: {{vientoVelocidad}} m/s<br>
                 </p>
             </div>
           </div>
         
       <div class="card-body">
-        <h1 class="card-title">Soleado</h1>
+        <h1 class="card-title">{{climaDescripcion}}</h1>
         <p class="card-text"> https://www.angularjswiki.com/fontawesome/ This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
       <div class="card-footer">
