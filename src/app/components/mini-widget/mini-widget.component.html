@@ -1,1 +1,37 @@
-<p>mini-widget works!</p>
+<div class="container">
+
+
+    <div class="card-group ">
+        <div class="row">
+    
+        
+        <div class="card">
+            <div class="card-header ">
+                <h2>Guatemala, Ciudad</h2>
+              </div>
+    
+              <div class="row ">
+                <div class = "col txt-center">
+                  <fa-icon [icon]="fasun" class="fas  fa-5x" style="color:orange"> </fa-icon> <br>
+                </div>
+                <div class = "col">
+                    <h1>{{temperatura}}  ℃</h1>
+                    <button type="button" class="btn btn-primary" onclick="alert('hola');">Ver pronostico completo</button>
+                </div>
+    
+                <div class = "col">
+                    <p>
+                    <b>{{climaDescripcion}}</b><br>
+                    <fa-icon [icon]="fatint"> </fa-icon> Humedad: {{humedad}} %<br>
+                    <fa-icon [icon]="fathermometerfull"> </fa-icon> Max: {{max}} ℃<br>
+                    <fa-icon [icon]="fathermometerempty"> </fa-icon> Min: {{min}} ℃<br>
+                  </p>
+                </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Actualizado: {{date}} </small>
+          </div>
+        </div>
+    </div>
+      </div>
+    </div>
