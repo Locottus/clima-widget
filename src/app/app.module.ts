@@ -8,6 +8,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetComponent } from './components/widget/widget.component';
 import { MiniWidgetComponent } from './components/mini-widget/mini-widget.component';
 
+//HTTM CONF.
+import {HttpClientModule} from '@angular/common/http'
+
+//SERVICES
+import { ClimaGeneralService } from './services/clima-general.service';
+import { ClimaDetalleService } from './services/clima-detalle.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +24,10 @@ import { MiniWidgetComponent } from './components/mini-widget/mini-widget.compon
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ClimaGeneralService, ClimaDetalleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,10 @@ import {
   faArrowDown,faThermometerFull,faThermometerEmpty
  } from '@fortawesome/free-solid-svg-icons';
 
+//import services 
+import { ClimaGeneralService } from 'src/app/services/clima-general.service';
+
+import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
 @Component({
   selector: 'app-mini-widget',
   templateUrl: './mini-widget.component.html',
@@ -48,9 +52,18 @@ export class MiniWidgetComponent implements OnInit {
 
   climaDescripcion = 'parcialmente nublado';
 
-  constructor() { }
+  //climaData: ClimaGeneral[] = [];
+  climaData: ClimaGeneral[] = [];
+  
+  constructor(private _cg:ClimaGeneralService) { }
 
   ngOnInit(): void {
+    this._cg.getClima().subscribe(data => {
+      this.climaData = data;
+      console.log(this.climaData);
+      //this.temperatura = this.climaData.main.temp
+    });
+    
   }
 
 }

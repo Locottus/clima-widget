@@ -7,6 +7,10 @@ import {
  } from '@fortawesome/free-solid-svg-icons';
 
 
+//import services 
+import { ClimaGeneralService } from 'src/app/services/clima-general.service';
+
+import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
 
 
 @Component({
