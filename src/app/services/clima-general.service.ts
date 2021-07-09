@@ -18,11 +18,12 @@ export class ClimaGeneralService {
       + this.y +'&lon='+this.x +'&lang=sp&units=metric';
  */
   private _url = '/assets/clima-general.json';
-
+  clima : ClimaGeneral | undefined ;
   constructor(private http: HttpClient) { }
 
-  getClima():Observable<ClimaGeneral[]>{
-    return this.http.get<ClimaGeneral[]>(this._url);
+  getClima():Observable<ClimaGeneral>{
+    return this.http.get<ClimaGeneral>(this._url);
+    
   }
 
 }

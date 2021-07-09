@@ -1,42 +1,42 @@
 export interface ClimaGeneral{
     coord :{
-        lon: Number,
-        lat: Number
+        lon: number,
+        lat: number
     },
     weather:[{
-        id:Number,
-        main: Text,
-        description: Text,
-        icon: Text
+        id:number,
+        main: string,
+        description: string,
+        icon: string
     }],
-    base: Text,
+    base: string,
     main:{
-        temp: Number,
-        feels_like: Number,
-        temp_min: Number,
-        temp_max: Number,
-        pressure: Number,
-        humidity: Number
+        temp: number,
+        feels_like: number,
+        temp_min: number,
+        temp_max: number,
+        pressure: number,
+        humidity: number
     },
-    visibility: Number,
+    visibility: number,
     wind:{
-        speed: Number,
-        deg: Number
+        speed: number,
+        deg: number
     },
     clouds:{
-        all: Number
+        all: number
     },
-    dt: Number,
+    dt: number,
     sys: {
-        type: Number,
-        id: Number,
-        message: Number,
-        country: Text,
-        sunrise: Number,
-        sunset: Number
+        type: number,
+        id: number,
+        message: number,
+        country: string,
+        sunrise: number,
+        sunset: number
     },
-    timezone: Number,
-    id: Number,
-    name: Text,
-    cod: Number
+    timezone: number,
+    id: number,
+    name: string,
+    cod: number
 }

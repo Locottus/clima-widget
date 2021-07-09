@@ -64,7 +64,9 @@ export class WidgetComponent implements OnInit {
         console.log(this.date);
         //https://api.openweathermap.org/data/2.5/forecast?lat=14.6341888&lon=-90.5248768&appid=98674de6a91859bcea48ba07be964379&units=metric&lang=sp
         //https://openweathermap.org/forecast5
-        
+
+        //https://openweathermap.org/forecast5
+
       });
     } else {
       console.log("Geolocation is not supported by this browser.");
