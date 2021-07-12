@@ -56,7 +56,12 @@ export class MiniWidgetComponent implements OnInit {
   fecha = '';
   hora = 0;
   dia = false;
-  //climaData: ClimaGeneral[] = [];
+
+  seco = 0;
+  lluvia = 1;
+  nuboso  = 2;
+  climaIcono = 0;
+
   climaData: ClimaGeneral | undefined;
   
   constructor(private _cg:ClimaGeneralService) { }
@@ -73,11 +78,22 @@ export class MiniWidgetComponent implements OnInit {
       this.climaDescripcion = this.climaData.weather[0].description;
       var d = new Date();
       this.fecha = d.toString();
-      this.hora = d.getHours();      
-      if (this.hora > 5 && this.hora < 19)
+      this.hora = d.getHours();
+      
+      if (this.climaDescripcion.indexOf( "nube" )>-1)
+        this.climaIcono = this.nuboso;
+      if (this.climaDescripcion.indexOf( "lluvi" )>-1)
+        this.climaIcono = this.lluvia;
+
+
+      if (this.hora > 5 && this.hora < 19){
         this.dia = true;
-      else
+      }
+        
+      else{
         this.dia = false;
+      }
+        
     });
   }
 
