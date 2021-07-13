@@ -15,12 +15,19 @@ import {HttpClientModule} from '@angular/common/http'
 import { ClimaGeneralService } from './services/clima-general.service';
 import { ClimaDetalleService } from './services/clima-detalle.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { ControlesComponent } from './components/controles/controles.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     WidgetComponent,
     MiniWidgetComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent,
+    MapaComponent,
+    ControlesComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NgbModule,
     FontAwesomeModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [ClimaGeneralService, ClimaDetalleService],
   bootstrap: [AppComponent]
