@@ -3,14 +3,17 @@ import {
   faCloud,faCloudMoon,faCloudMoonRain,faCloudRain,
   faCloudShowersHeavy,faCloudSun,faCloudSunRain,
   faMoon,faSun,faThermometer,faWind,faEye,faTint,
-  faArrowDown,
+  faArrowDown,faThermometerFull,faThermometerEmpty
  } from '@fortawesome/free-solid-svg-icons';
 
 
 //import services 
 import { ClimaGeneralService } from 'src/app/services/clima-general.service';
-
 import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
+
+//parms in url
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common'
 
 
 @Component({
@@ -19,6 +22,8 @@ import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
   styleUrls: ['./widget.component.css']
 })
 export class WidgetComponent implements OnInit {
+  fathermometerfull=faThermometerFull;
+  fathermometerempty=faThermometerEmpty;
   faarrowdown = faArrowDown;
   fatint = faTint;
   facloud = faCloud;
@@ -34,9 +39,8 @@ export class WidgetComponent implements OnInit {
   fawind =faWind;
   faeye = faEye;
 
-  date = new Date();
-  latitude = 0;
-  longitude = 0;
+  lat = 0;
+  lon = 0;
 
   nubosidad = 0;
   visibilidad = 0;
@@ -52,16 +56,30 @@ export class WidgetComponent implements OnInit {
   vientoVelocidad = 0;
 
   climaDescripcion = '';
-  constructor() { }
+  ciudad = '';
+
+  fecha = '';
+  hora = 0;
+  dia = false;
+
+  seco = 0;
+  lluvia = 1;
+  nuboso  = 2;
+  climaIcono = 0;
+
+  climaData: ClimaGeneral | undefined;
+  constructor(private cg:ClimaGeneralService,
+    private route: ActivatedRoute,
+    private location: Location) { }
 
 
   getCoordinates(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position)=>{
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
+        this.lat = position.coords.latitude;
+        this.lon = position.coords.longitude;
         console.log(position.coords.latitude,position.coords.longitude);
-        console.log(this.date);
+        console.log(this.fecha);
         //https://api.openweathermap.org/data/2.5/forecast?lat=14.6341888&lon=-90.5248768&appid=98674de6a91859bcea48ba07be964379&units=metric&lang=sp
         //https://openweathermap.org/forecast5
 
@@ -74,7 +92,63 @@ export class WidgetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCoordinates();
+    //get url parms
+    //let y = this.route.snapshot.paramMap.get('latitude');
+    //let x = this.route.snapshot.paramMap.get('longitude');
+    this.route.queryParams.subscribe(params => {
+      this.lat = params['lat'];
+      this.lon = params['lon'];
+      
+      if ((typeof this.lat == 'undefined') || (typeof this.lon == 'undefined')){
+       this.getCoordinates();
+      }
+
+    });
+
+    
+    this.cg.getClima(this.lat,this.lon).subscribe(data => {
+      this.climaData = data;
+      
+      console.log(data);
+      //general
+
+      this.temperatura = this.climaData.main.temp;
+      this.max = this.climaData.main.temp_max;
+      this.min = this.climaData.main.temp_min;
+      this.humedad = this.climaData.main.humidity;
+      this.climaDescripcion = this.climaData.weather[0].description;
+      this.ciudad = this.climaData.name;
+      this.nubosidad = this.climaData.clouds.all;
+      this.visibilidad = this.climaData.visibility;
+      this.presion = this.climaData.main.pressure;
+      this.altura = this.climaData.main.sea_level;
+      this.feels = this.climaData.main.feels_like;
+      var d = new Date();
+      this.fecha = d.toString();
+      this.hora = d.getHours();
+
+            
+      //viento
+      this.vientoGrados = this.climaData.wind.deg;
+      this.vientoGust = this.climaData.wind.gust;
+      this.vientoVelocidad = this.climaData.wind.speed;
+
+      //default dia despejado
+      if (this.climaDescripcion.indexOf( "nub" )>-1) //nuboso o parecido
+        this.climaIcono = this.nuboso;
+      if (this.climaDescripcion.indexOf( "lluvi" )>-1)//lluvioso o parecido
+        this.climaIcono = this.lluvia;
+
+
+      if (this.hora > 5 && this.hora < 19){
+        this.dia = true;
+      }
+        
+      else{
+        this.dia = false;
+      }
+        
+    });
   }
 
 }

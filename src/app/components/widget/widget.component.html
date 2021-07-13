@@ -7,15 +7,40 @@
     
     <div class="card">
         <div class="card-header">
-            <h1>Guatemala, Ciudad</h1>
-            <p>Latitud: {{latitude}} Longitud: {{longitude}} </p>
+            <h1>{{ciudad| titlecase}}.  {{climaDescripcion | titlecase}},  {{temperatura}}℃</h1>
+            <p>Latitud: {{lat}} Longitud: {{lon}} </p>
           </div>
     
           <div class="row ">
             <div class = "col txt-center">
               <!--<img class="card-img-top  w-75" src="/assets/sun.png" alt="Card disimage cap"> -->
-              <fa-icon [icon]="fasun" class="fas  fa-10x" style="color:orange"> </fa-icon> <br>
-              <h1>{{temperatura}}  ℃</h1>
+              <div id="dia" *ngIf="dia">
+                <div id="soleado" *ngIf="climaIcono == 0">
+                  <fa-icon [icon]='fasun' class="fas  fa-5x" style="color:orange"> </fa-icon> <br>
+                </div>
+
+                <div id="soleadonuboso" *ngIf="climaIcono == 1">
+                  <fa-icon [icon]='facloudsunrain' class="fas  fa-5x" style="color:orange"> </fa-icon> <br>
+                </div>
+                <div id="soleadolluvioso" *ngIf="climaIcono == 2">
+                  <fa-icon [icon]='facloud' class="fas  fa-5x" style="color:orange"> </fa-icon> <br>
+                </div>
+              </div>
+
+              <div id="dia" *ngIf="!dia">
+                <div id="luna" *ngIf="climaIcono == 0">
+                  <fa-icon [icon]='famoon' class="fas  fa-5x" style="color:steelblue"> </fa-icon> <br>
+                </div>
+
+                <div id="lunanublado" *ngIf="climaIcono == 1">
+                  <fa-icon [icon]='facloudmoonrain' class="fas  fa-5x" style="color:steelblue"> </fa-icon> <br>
+                </div>
+                <div id="lunalluvioso" *ngIf="climaIcono == 2">
+                  <fa-icon [icon]='facloudmoon' class="fas  fa-5x" style="color:steelblue"> </fa-icon> <br>
+                </div>
+
+              </div>
+
             </div>
 
             <div class = "col">
@@ -44,7 +69,7 @@
           </div>
         
       <div class="card-body">
-        <h1 class="card-title">{{climaDescripcion}}</h1>
+        
         <div class="row ">
           <div class="col">
             <h4>06/07/2021</h4>
@@ -116,7 +141,7 @@
         
       </div>
       <div class="card-footer">
-        <small class="text-muted">Actualizado: {{date | date}} </small>
+        <small class="text-muted">Actualizado: {{fecha | date}} </small>
       </div>
     </div>
 </div>

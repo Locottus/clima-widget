@@ -16,12 +16,14 @@ export interface ClimaGeneral{
         temp_min: number,
         temp_max: number,
         pressure: number,
-        humidity: number
+        humidity: number,
+        sea_level:number
     },
     visibility: number,
     wind:{
         speed: number,
-        deg: number
+        deg: number,
+        gust: number
     },
     clouds:{
         all: number
