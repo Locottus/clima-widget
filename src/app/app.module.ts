@@ -14,11 +14,13 @@ import {HttpClientModule} from '@angular/common/http'
 //SERVICES
 import { ClimaGeneralService } from './services/clima-general.service';
 import { ClimaDetalleService } from './services/clima-detalle.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
     WidgetComponent,
-    MiniWidgetComponent
+    MiniWidgetComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
