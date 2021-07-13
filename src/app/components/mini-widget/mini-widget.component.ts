@@ -11,6 +11,13 @@ import { ClimaGeneralService } from 'src/app/services/clima-general.service';
 
 import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+
+//parms in url
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common'
+
+
+
 @Component({
   selector: 'app-mini-widget',
   templateUrl: './mini-widget.component.html',
@@ -34,8 +41,8 @@ export class MiniWidgetComponent implements OnInit {
   fawind =faWind;
   faeye = faEye;
 
-  latitude = 0;
-  longitude = 0;
+  lat = 0;
+  lon = 0;
 
   nubosidad = 0;
   visibilidad = 0;
@@ -51,7 +58,7 @@ export class MiniWidgetComponent implements OnInit {
   vientoVelocidad = 0;
 
   climaDescripcion = '';
-
+  ciudad = '';
 
   fecha = '';
   hora = 0;
@@ -64,25 +71,44 @@ export class MiniWidgetComponent implements OnInit {
 
   climaData: ClimaGeneral | undefined;
   
-  constructor(private _cg:ClimaGeneralService) { }
+  constructor(private cg:ClimaGeneralService,
+    private route: ActivatedRoute,
+    private location: Location) { }
 
   
+
   ngOnInit(): void {
-    this._cg.getClima().subscribe(data => {
+    //get url parms
+    //let y = this.route.snapshot.paramMap.get('latitude');
+    //let x = this.route.snapshot.paramMap.get('longitude');
+    this.route.queryParams.subscribe(params => {
+      this.lat = params['lat'];
+      this.lon = params['lon'];
+      
+      if ((typeof this.lat == 'undefined') || (typeof this.lon == 'undefined')){
+       this.getCoordinates();
+      }
+
+    });
+
+    
+    this.cg.getClima(this.lat,this.lon).subscribe(data => {
       this.climaData = data;
-      //console.log(data);
+      console.log(data);
       this.temperatura = this.climaData.main.temp;
       this.max = this.climaData.main.temp_max;
       this.min = this.climaData.main.temp_min;
       this.humedad = this.climaData.main.humidity;
       this.climaDescripcion = this.climaData.weather[0].description;
+      this.ciudad = this.climaData.name;
       var d = new Date();
       this.fecha = d.toString();
       this.hora = d.getHours();
       
-      if (this.climaDescripcion.indexOf( "nube" )>-1)
+      //default dia despejado
+      if (this.climaDescripcion.indexOf( "nub" )>-1) //nuboso o parecido
         this.climaIcono = this.nuboso;
-      if (this.climaDescripcion.indexOf( "lluvi" )>-1)
+      if (this.climaDescripcion.indexOf( "lluvi" )>-1)//lluvioso o parecido
         this.climaIcono = this.lluvia;
 
 
@@ -96,5 +122,25 @@ export class MiniWidgetComponent implements OnInit {
         
     });
   }
+
+  getCoordinates(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position)=>{
+        this.lat = position.coords.latitude;
+        this.lon = position.coords.longitude;
+        console.log(position.coords.latitude,position.coords.longitude);
+        
+        //https://api.openweathermap.org/data/2.5/forecast?lat=14.6341888&lon=-90.5248768&appid=98674de6a91859bcea48ba07be964379&units=metric&lang=sp
+        //https://openweathermap.org/forecast5
+
+        //https://openweathermap.org/forecast5
+
+      });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+
 
 }
