@@ -10,10 +10,12 @@ import {
 //import services 
 import { ClimaGeneralService } from 'src/app/services/clima-general.service';
 import { ClimaGeneral } from 'src/app/models/ClimaGeneral';
+import { ClimaForecast } from 'src/app/models/ClimaForecast';
 
 //parms in url
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common'
+import { ClimaDetalleService } from 'src/app/services/clima-detalle.service';
 
 
 @Component({
@@ -68,7 +70,10 @@ export class WidgetComponent implements OnInit {
   climaIcono = 0;
 
   climaData: ClimaGeneral | undefined;
+  climaDataForecast: ClimaForecast | undefined;
+  
   constructor(private cg:ClimaGeneralService,
+    private cf:ClimaDetalleService,
     private route: ActivatedRoute,
     private location: Location) { }
 
@@ -105,11 +110,15 @@ export class WidgetComponent implements OnInit {
 
     });
 
+    this.cf.getClima(this.lat,this.lon).subscribe(data => {
+        this.climaDataForecast = data;
+        console.log(this.climaDataForecast);
+    });
     
     this.cg.getClima(this.lat,this.lon).subscribe(data => {
       this.climaData = data;
       
-      console.log(data);
+      //console.log(data);
       //general
 
       this.temperatura = this.climaData.main.temp;

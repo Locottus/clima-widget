@@ -1,4 +1,4 @@
-export interface ClimaGeneral{
+export interface ClimaForecast{
     cod: number,
     message: string,
     cnt: number,
