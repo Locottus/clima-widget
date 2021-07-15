@@ -1,6 +1,7 @@
 
 .tablaarea {
     width: 100%;
+    
   }
 
   .maparea {
@@ -9,5 +10,6 @@
   }
 
   .controlarea {
-    width: 22%;
+    width: 25%;
+    
   }
