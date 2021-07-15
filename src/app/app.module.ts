@@ -14,13 +14,16 @@ import {HttpClientModule} from '@angular/common/http'
 //SERVICES
 import { ClimaGeneralService } from './services/clima-general.service';
 import { ClimaDetalleService } from './services/clima-detalle.service';
+import { EstacionesService } from './services/estaciones.service';
+import { AniosService } from './services/anios.service';
+
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { ControlesComponent } from './components/controles/controles.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EstacionesComponent } from './services/estaciones/estaciones.component';
-import { AniosComponent } from './services/anios/anios.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +33,6 @@ import { AniosComponent } from './services/anios/anios.component';
     HomeComponent,
     MapaComponent,
     ControlesComponent,
-    EstacionesComponent,
-    AniosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,12 @@ import { AniosComponent } from './services/anios/anios.component';
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [ClimaGeneralService, ClimaDetalleService],
+  providers: [
+    ClimaGeneralService,
+    ClimaDetalleService, 
+    EstacionesService, 
+    AniosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
