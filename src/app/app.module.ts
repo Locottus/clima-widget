@@ -19,6 +19,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { ControlesComponent } from './components/controles/controles.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EstacionesComponent } from './services/estaciones/estaciones.component';
+import { AniosComponent } from './services/anios/anios.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     HomeComponent,
     MapaComponent,
-    ControlesComponent
+    ControlesComponent,
+    EstacionesComponent,
+    AniosComponent
   ],
   imports: [
     BrowserModule,

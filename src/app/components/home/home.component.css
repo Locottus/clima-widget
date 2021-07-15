@@ -1,0 +1,13 @@
+
+.tablaarea {
+    width: 100%;
+  }
+
+  .maparea {
+    width: auto;
+    background: green;
+  }
+
+  .controlarea {
+    width: 22%;
+  }
