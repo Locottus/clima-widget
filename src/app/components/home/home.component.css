@@ -6,10 +6,19 @@
 
   .maparea {
     width: auto;
-    background: green;
+    background: gray;
   }
 
   .controlarea {
     width: 25%;
     
   }
+  
+  #wrapper {
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+
+  #mapa1 {float: left; width: 900px; margin:15px; background: gray;} 
+  #control2 { float: left; width:450px; margin:15px;} 

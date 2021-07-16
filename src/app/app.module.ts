@@ -23,6 +23,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { ControlesComponent } from './components/controles/controles.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {GoogleMapsModule} from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    GoogleMapsModule,
   ],
   providers: [
     ClimaGeneralService,
