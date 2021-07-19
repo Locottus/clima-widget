@@ -25,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {GoogleMapsModule} from '@angular/google-maps';
 
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import {GoogleMapsModule} from '@angular/google-maps';
     HttpClientModule,
     BrowserAnimationsModule,
     GoogleMapsModule,
+    Ng2GoogleChartsModule
   ],
   providers: [
     ClimaGeneralService,
