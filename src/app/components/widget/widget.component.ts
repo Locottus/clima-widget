@@ -25,9 +25,6 @@ import { ClimaDetalleService } from 'src/app/services/clima-detalle.service';
 export class WidgetComponent implements OnInit {
 
 
-
-
-
   fathermometerfull=faThermometerFull;
   fathermometerempty=faThermometerEmpty;
   faarrowdown = faArrowDown;
@@ -75,11 +72,18 @@ export class WidgetComponent implements OnInit {
 
   climaData: ClimaGeneral | undefined;
   climaDataForecast: ClimaForecast | undefined;
-  
+
+  nombresTempChart : string[] = ['Fecha','Temp','Max','Min'] ;
+  fechasChart : string[] = [] ;
+  temperaturasChart : number[] = [] ;
+  temperaturasMaxChart : number[] = [] ;
+  temperaturasMinChart : number[] = [] ;
   constructor(private cg:ClimaGeneralService,
     private cf:ClimaDetalleService,
     private route: ActivatedRoute,
     private location: Location) { }
+
+
 
 
   getCoordinates(){
@@ -104,6 +108,8 @@ export class WidgetComponent implements OnInit {
     //get url parms
     //let y = this.route.snapshot.paramMap.get('latitude');
     //let x = this.route.snapshot.paramMap.get('longitude');
+    
+
     this.route.queryParams.subscribe(params => {
       this.lat = params['lat'];
       this.lon = params['lon'];
@@ -117,6 +123,15 @@ export class WidgetComponent implements OnInit {
     this.cf.getClima(this.lat,this.lon).subscribe(data => {
         this.climaDataForecast = data;
         console.log(this.climaDataForecast.list);
+        this.climaDataForecast.list.forEach(l =>{
+
+          this.fechasChart.push(new Date(l.dt * 1000).toString());
+          this.temperaturasChart.push(l.main.temp);
+          this.temperaturasMaxChart.push(l.main.temp_max);
+          this.temperaturasMinChart.push(l.main.temp_min);
+          //console.log(d);
+        });
+        console.log(this.fechasChart);
     });
     
     this.cg.getClima(this.lat,this.lon).subscribe(data => {
@@ -162,6 +177,7 @@ export class WidgetComponent implements OnInit {
       }
         
     });
+   
   }
 
 }

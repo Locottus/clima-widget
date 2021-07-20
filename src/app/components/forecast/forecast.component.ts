@@ -13,10 +13,10 @@ export class ForecastComponent implements OnInit {
     chartType: 'LineChart',
     dataTable: [
       ["Month", "Tokyo", "New York","Berlin", "Paris"],
-      ["Jan",  7.0, -0.2, -0.9, 3.9],
+      ["Enero",  7.0, -0.2, -0.9, 3.9],
       ["Feb",  6.9, 0.8, 0.6, 4.2],
       ["Mar",  9.5,  5.7, 3.5, 5.7],
-      ["Apr",  14.5, 11.3, 8.4, 8.5],
+      ["Apr",  14.5, 1.3, 8.4, 8.5],
       ["May",  18.2, 17.0, 13.5, 11.9],
       ["Jun",  21.5, 22.0, 17.0, 15.2],
       ["Jul",  25.2, 24.8, 18.6, 17.0],
@@ -30,8 +30,6 @@ export class ForecastComponent implements OnInit {
     options: {'title': 'Proyeccion para los proximos 5 dias'},
   };
 
-
-  
   constructor() { }
 
   ngOnInit(): void {

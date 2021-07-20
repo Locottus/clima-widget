@@ -40,7 +40,7 @@ export interface ClimaForecast{
             sys:{
                 pod: string
             },
-            dt_string: string
+            dt_string: Date
         }       
     ]
 }
