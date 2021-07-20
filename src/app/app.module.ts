@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GoogleMapsModule} from '@angular/google-maps';
 
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ForecastComponent } from './components/forecast/forecast.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     HomeComponent,
     MapaComponent,
     ControlesComponent,
+    ForecastComponent,
   ],
   imports: [
     BrowserModule,
