@@ -78,6 +78,8 @@ export class WidgetComponent implements OnInit {
   temperaturasChart : number[] = [] ;
   temperaturasMaxChart : number[] = [] ;
   temperaturasMinChart : number[] = [] ;
+  tempDataSet: any[] = [];
+  
   constructor(private cg:ClimaGeneralService,
     private cf:ClimaDetalleService,
     private route: ActivatedRoute,
@@ -125,13 +127,19 @@ export class WidgetComponent implements OnInit {
         console.log(this.climaDataForecast.list);
         this.climaDataForecast.list.forEach(l =>{
 
-          this.fechasChart.push(new Date(l.dt * 1000).toString());
+          var d = new Date(l.dt * 1000).toString().split(' '); 
+          
+          this.fechasChart.push(d[2] + ' ' + d[1] +' '+ d[4] );
           this.temperaturasChart.push(l.main.temp);
           this.temperaturasMaxChart.push(l.main.temp_max);
           this.temperaturasMinChart.push(l.main.temp_min);
           //console.log(d);
         });
-        console.log(this.fechasChart);
+        //var a: any[] = [];
+        for (var i = 0; i < this.fechasChart.length; i++){
+          this.tempDataSet.push([this.fechasChart[i],this.temperaturasChart[i],this.temperaturasMaxChart[i],this.temperaturasMinChart[i]]);
+        }
+        console.log(this.tempDataSet);
     });
     
     this.cg.getClima(this.lat,this.lon).subscribe(data => {
