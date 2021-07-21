@@ -1,20 +1,20 @@
 <div class="container">
 
 
-<div class="card-group ">
-    <div class="row">
+  <div class="card-group ">
+    <div class="row col-md-8 offset-md-2">
 
-    
-    <div class="card">
 
-      <section id="headerToday">
-        <div class="card-header">
-            <h1>{{ciudad| titlecase}}.  {{climaDescripcion | titlecase}},  {{temperatura}}℃</h1>
+      <div class="card">
+
+        <section id="headerToday">
+          <div class="card-header">
+            <h1>{{ciudad| titlecase}}. {{climaDescripcion | titlecase}}, {{temperatura}}℃</h1>
             <p>Latitud: {{lat}} Longitud: {{lon}} </p>
           </div>
-    
+
           <div class="row ">
-            <div class = "col txt-center">
+            <div class="col txt-center">
               <!--<img class="card-img-top  w-75" src="/assets/sun.png" alt="Card disimage cap"> -->
               <div id="dia" *ngIf="dia">
                 <div id="soleado" *ngIf="climaIcono == 0">
@@ -45,27 +45,26 @@
 
             </div>
 
-            <div class = "col">
-                <h4>Datos Generales</h4>
-                <p>
-                <!--<fa-icon [icon]="facloud"> </fa-icon> Nubosidad: 76 % <br>-->
+            <div class="col">
+              <h4>Datos Generales</h4>
+              <p>
                 Nubosidad: {{nubosidad}} % <br>
                 Visibilidad: {{visibilidad}} m <br>
                 Humedad: {{humedad}} % <br>
                 Presión: {{presion}} hPa <br>
                 Max: {{max}} ℃ <br>
                 Min: {{min}} ℃ <br>
-                feels like: {{feels}} ℃ <br>              
+                feels like: {{feels}} ℃ <br>
               </p>
             </div>
 
-            <div class = "col">
-                <h4>Viento</h4>
-                <p>
-                  Grados: {{vientoGrados}} <br>
-                  Gust: {{vientoGust}} <br>
-                  Velocidad: {{vientoVelocidad}} m/s<br>
-                </p>
+            <div class="col">
+              <h4>Viento</h4>
+              <p>
+                Grados: {{vientoGrados}} <br>
+                Gust: {{vientoGust}} <br>
+                Velocidad: {{vientoVelocidad}} m/s<br>
+              </p>
             </div>
           </div>
 
@@ -73,8 +72,8 @@
 
 
 
-      <section id="forecast5days">
-<!--
+        <section id="forecast5days">
+          
 
         <div class="card-body">
           <div class="row ">
@@ -143,32 +142,23 @@
                 vientoGust :<br>
                 vientoVelocidad :<br>
             </div>
-  
           </div>
-          <br>
-          <div class="col txt-center">
-            <h1>aqui va una grafica de lineas</h1>
-          </div>
-          
         </div>
-        -->
-      </section>
-      
-      <section id="cicloDatos">
-        <div class="row ">
-        
-  
-         
+        </section>
+
+        <div class="card-footer">
+          <small class="text-muted">Actualizado: {{fecha | date}} </small>
         </div>
-      </section>
-
-
-      <div class="card-footer">
-        <small class="text-muted">Actualizado: {{fecha | date}} </small>
       </div>
     </div>
-</div>
   </div>
 </div>
 
-<app-forecast></app-forecast>
+
+
+<div class="row">
+  <div class=" col">
+    <app-forecast></app-forecast>
+  </div>
+</div>
+
