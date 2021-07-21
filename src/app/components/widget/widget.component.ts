@@ -144,9 +144,6 @@ export class WidgetComponent implements OnInit {
     
     this.cg.getClima(this.lat,this.lon).subscribe(data => {
       this.climaData = data;
-      
-      //console.log(data);
-      //general
 
       this.temperatura = this.climaData.main.temp;
       this.max = this.climaData.main.temp_max;
