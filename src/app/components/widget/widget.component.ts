@@ -6,6 +6,7 @@ import {
   faArrowDown,faThermometerFull,faThermometerEmpty
  } from '@fortawesome/free-solid-svg-icons';
 
+ import { GoogleChartInterface } from 'ng2-google-charts';
 
 //import services 
 import { ClimaGeneralService } from 'src/app/services/clima-general.service';
@@ -73,13 +74,30 @@ export class WidgetComponent implements OnInit {
   climaData: ClimaGeneral | undefined;
   climaDataForecast: ClimaForecast | undefined;
 
-  nombresTempChart : string[] = ['Fecha','Temp','Max','Min'] ;
   fechasChart : string[] = [] ;
   temperaturasChart : number[] = [] ;
   temperaturasMaxChart : number[] = [] ;
   temperaturasMinChart : number[] = [] ;
-  tempDataSet: any[] = [];
+  //tempDataSet: any[] = [];
   
+
+
+  tempDataSet: any[] = [
+    ["Fecha", "Temp", "Max","Min"]
+
+  ];
+
+  chartType = 'LineChart';
+  titulo ='Proyeccion para los proximos 5 dias de temperatura';
+
+  public lineChart: GoogleChartInterface = {
+    //chartType: 'PieChart',
+    chartType: this.chartType,
+    dataTable: this.tempDataSet,
+    //firstRowIsData: true, 'width':400,
+    options: {'title': this.titulo, 'height':800},
+  };
+
   constructor(private cg:ClimaGeneralService,
     private cf:ClimaDetalleService,
     private route: ActivatedRoute,

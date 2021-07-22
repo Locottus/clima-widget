@@ -1,12 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleChartInterface } from 'ng2-google-charts';
 
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { ClimaForecast } from 'src/app/models/ClimaForecast';
+
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
+
+  climaDataForecast: ClimaForecast | any ;
+  private dataGraph = new BehaviorSubject<any>(
+    {}
+    );
 
   tempDataSet: any[] = [
     ["Fecha", "Temp", "Max","Min"],

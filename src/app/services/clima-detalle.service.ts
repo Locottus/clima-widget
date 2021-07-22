@@ -18,7 +18,7 @@ export class ClimaDetalleService {
   getClima(lat:number,lon:number):Observable<ClimaForecast>{
     //let url = 'https://api.openweathermap.org/data/2.5/weather?APPID=98674de6a91859bcea48ba07be964379&lat=' + lat.toString() +'&lon='+ lon.toString() +'&lang=sp&units=metric'
     let url =  '/assets/clima-forecast.json';
-    //console.log(url);
+    console.log(url);
     return this.http.get<ClimaForecast>(url);
     
   }

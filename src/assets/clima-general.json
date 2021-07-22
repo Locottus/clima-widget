@@ -1,45 +1,43 @@
 {
-    "coord": {
-      "lon": -122.08,
-      "lat": 37.39
-    },
-    "weather": [
+  "coord": {
+      "lon": -90.5249,
+      "lat": 14.6342
+  },
+  "weather": [
       {
-        "id": 800,
-        "main": "Clear",
-        "description": "despejado",
-        "icon": "01d"
+          "id": 802,
+          "main": "Clouds",
+          "description": "nubes dispersas",
+          "icon": "03d"
       }
-    ],
-    "base": "stations",
-    "main": {
-      "temp": 282.55,
-      "feels_like": 281.86,
-      "temp_min": 280.37,
-      "temp_max": 284.26,
-      "pressure": 1023,
-      "humidity": 100
-    },
-    "visibility": 16093,
-    "wind": {
-      "speed": 1.5,
-      "deg": 350
-    },
-    "clouds": {
-      "all": 1
-    },
-    "dt": 1560350645,
-    "sys": {
+  ],
+  "base": "stations",
+  "main": {
+      "temp": 24.81,
+      "feels_like": 24.68,
+      "temp_min": 23.53,
+      "temp_max": 26.65,
+      "pressure": 1019,
+      "humidity": 51
+  },
+  "visibility": 10000,
+  "wind": {
+      "speed": 7.2,
+      "deg": 30
+  },
+  "clouds": {
+      "all": 40
+  },
+  "dt": 1626898829,
+  "sys": {
       "type": 1,
-      "id": 5122,
-      "message": 0.0139,
-      "country": "US",
-      "sunrise": 1560343627,
-      "sunset": 1560396563
-    },
-    "timezone": -25200,
-    "id": 420006353,
-    "name": "Mountain View",
-    "cod": 200
-    }                         
-  
+      "id": 7079,
+      "country": "GT",
+      "sunrise": 1626867743,
+      "sunset": 1626914057
+  },
+  "timezone": -21600,
+  "id": 3598132,
+  "name": "Guatemala City",
+  "cod": 200
+}
