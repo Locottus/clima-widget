@@ -1,0 +1,266 @@
+[
+    {
+        "estacion": "Alameda",
+        "longitud": "-90.80333333",
+        "latitud": "14.63388889",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Albores",
+        "longitud": "-89.949167",
+        "latitud": "15.0525",
+        "zona_vida": "bmh-mbt"
+    },
+    {
+        "estacion": "Asuncion_Mita",
+        "longitud": "-89.70583333",
+        "latitud": "14.33444444",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Camantulul",
+        "longitud": "-91.05083333",
+        "latitud": "14.325",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Camotan",
+        "longitud": "-89.37277778",
+        "latitud": "14.82055556",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Catarina",
+        "longitud": "-92.07722222",
+        "latitud": "14.85555556",
+        "zona_vida": "bmh-t"
+    },
+    {
+        "estacion": "Chinique",
+        "longitud": "-91.024444",
+        "latitud": "15.043889",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Coban",
+        "longitud": "-90.4075",
+        "latitud": "15.46666667",
+        "zona_vida": "bmh-pmt"
+    },
+    {
+        "estacion": "Cubulco",
+        "longitud": "-90.61416667",
+        "latitud": "15.10888889",
+        "zona_vida": "bs-pmt"
+    },
+    {
+        "estacion": "Cuilco",
+        "longitud": "-91.952778",
+        "latitud": "15.40639",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "El_capitan",
+        "longitud": "-91.14055556",
+        "latitud": "14.64305556",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "El_Tablon",
+        "longitud": "-91.18194444",
+        "latitud": "14.79027778",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Esquipulas",
+        "longitud": "-89.34194444",
+        "latitud": "14.55888889",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Flores",
+        "longitud": "-89.86638889",
+        "latitud": "16.91472222",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Huehuetenango",
+        "longitud": "-91.503056",
+        "latitud": "15.317222",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "INSIVUMEH",
+        "longitud": "-90.53277778",
+        "latitud": "14.58638889",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Labor_Ovalle",
+        "longitud": "-91.48",
+        "latitud": "14.87",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "La_Ceibita",
+        "longitud": "-89.87555556",
+        "latitud": "14.49277778",
+        "zona_vida": "bs-pmt"
+    },
+    {
+        "estacion": "La_Fragua",
+        "longitud": "-89.58444444",
+        "latitud": "14.96416667",
+        "zona_vida": "bms-t"
+    },
+    {
+        "estacion": "Las_Vegas",
+        "longitud": "-88.96666667",
+        "latitud": "15.6",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "La_Union",
+        "longitud": "-89.29111111",
+        "latitud": "14.96333333",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Los_esclavos",
+        "longitud": "-90.2783",
+        "latitud": "14.2528",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Montufar",
+        "longitud": "-90.155",
+        "latitud": "13.80888889",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Nebaj",
+        "longitud": "-91.142222",
+        "latitud": "15.398056",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Panzos",
+        "longitud": "-89.6439",
+        "latitud": "15.3972",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Pasabien",
+        "longitud": "-89.68",
+        "latitud": "15.03",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Potrero_Carrillo",
+        "longitud": "-89.93222222",
+        "latitud": "14.76055556",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Puerto_Barrios",
+        "longitud": "-88.59166667",
+        "latitud": "15.73777778",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Quezada",
+        "longitud": "-90.0378",
+        "latitud": "14.2661",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Retalhuleu",
+        "longitud": "-91.69583333",
+        "latitud": "14.52194444",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Sabana_Grande",
+        "longitud": "-90.8292",
+        "latitud": "14.3828",
+        "zona_vida": "bmh-t"
+    },
+    {
+        "estacion": "Sacapulas",
+        "longitud": "-91.092222",
+        "latitud": "15.291111",
+        "zona_vida": "bs-pmt"
+    },
+    {
+        "estacion": "San_Agustin_Chixoy",
+        "longitud": "-90.43888889",
+        "latitud": "16.06666667",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "San_Jeronimo",
+        "longitud": "-90.25",
+        "latitud": "15.0611",
+        "zona_vida": "bs-pmt"
+    },
+    {
+        "estacion": "San_Jose_Aeropuerto",
+        "longitud": "-90.83444444",
+        "latitud": "13.93611111",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "San_Marcos",
+        "longitud": "-91.80944444",
+        "latitud": "14.95416667",
+        "zona_vida": "bmh-mt"
+    },
+    {
+        "estacion": "San_Martin_Jilotepeque",
+        "longitud": "-90.78861111",
+        "latitud": "14.76194444",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "San_Pedro_Necta",
+        "longitud": "-91.76333333",
+        "latitud": "15.4952778",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Santa_Cruz_Balanya",
+        "longitud": "-90.91527778",
+        "latitud": "14.68666667",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Santa_Maria_Cahabon",
+        "longitud": "-89.81055556",
+        "latitud": "15.60833333",
+        "zona_vida": "bh-t"
+    },
+    {
+        "estacion": "Santiago_Atitlan",
+        "longitud": "-91.23138889",
+        "latitud": "14.63166667",
+        "zona_vida": "bh-pmt"
+    },
+    {
+        "estacion": "Suiza_Contenta",
+        "longitud": "-90.66111111",
+        "latitud": "14.61888889",
+        "zona_vida": "bh-mbt"
+    },
+    {
+        "estacion": "Tecun_Uman",
+        "longitud": "-92.13944444",
+        "latitud": "14.67361111",
+        "zona_vida": "bs-t"
+    },
+    {
+        "estacion": "Todo_Santos",
+        "longitud": "-91.60361111",
+        "latitud": "15.50472222",
+        "zona_vida": "bh-mbt"
+    }
+]

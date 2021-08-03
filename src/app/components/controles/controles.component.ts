@@ -15,9 +15,9 @@ import { estacion } from 'src/app/models/estacion';
 export class ControlesComponent implements OnInit {
 
 //climaData: ClimaGeneral | undefined;
-  anios: anio | undefined;
-  meses: mes | undefined;
-  estaciones: estacion | undefined;
+  anios: anio[] = [];
+  meses: mes[] = [];
+  estaciones: estacion[] = [];
 
   constructor(
     private _as:AniosService,

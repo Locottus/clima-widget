@@ -6,7 +6,9 @@
           <label class="input-group-text" for="selectEstacion" >Estacion Primaria</label>
         </div>
         <select class="custom-select" id="selectEstacion" onchange="">
-          
+          <option [ngValue]="null" disabled>Seleccione Estacion</option>
+
+
         </select>
       </div>
 
@@ -63,3 +65,10 @@
       </div>
       
 </div>
+
+<ul *ngIf='estaciones.length > 0'>
+  <li *ngFor='let e of estaciones'>
+    {{e.estacion}}
+  </li>
+
+</ul>

@@ -10,17 +10,17 @@ import { estacion } from '../models/estacion';
 })
 export class EstacionesService {
 
-  estacion : estacion | undefined ;
+//  estacion : estacion | undefined ;
+//estaciones: estacion[] = [];    
 
 
   constructor(private http: HttpClient) { }
 
-  getEstaciones():Observable<estacion>{
-    let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getestaciones'
-    //let url =  '/assets/clima-general.json';
+  getEstaciones():Observable<estacion[]>{
+    //let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getestaciones'
+    let url =  '/assets/estaciones.json';
     console.log(url);
-    return this.http.get<estacion>(url);
-    
+    return this.http.get<estacion[]>(url);
   }
 
 }

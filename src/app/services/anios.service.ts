@@ -10,24 +10,24 @@ import { mes } from '../models/mes';
 })
 export class AniosService {
 
-  anio : anio | undefined ;
-  mes : mes | undefined ;
+  //anio : anio | undefined ;
+  //mes : mes | undefined ;
 
   constructor(private http: HttpClient) { }
 
-  getAnios():Observable<anio>{
-    let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getanios'
-    //let url =  '/assets/clima-general.json';
+  getAnios():Observable<anio[]>{
+    //let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getanios'
+    let url =  '/assets/anios.json';
     console.log(url);
-    return this.http.get<anio>(url);
+    return this.http.get<anio[]>(url);
     
   }
 
-  getMes():Observable<mes>{
-    let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getmeses'
-    //let url =  '/assets/clima-general.json';
+  getMes():Observable<mes[]>{
+    //let url = 'https://arcgis-web.url.edu.gt/incyt/api/clima/getmeses'
+    let url =  '/assets/meses.json';
     console.log(url);
-    return this.http.get<mes>(url);
+    return this.http.get<mes[]>(url);
     
   }
 
