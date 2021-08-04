@@ -57,7 +57,31 @@ export class ControlesComponent implements OnInit {
 
   openNewWindow():void {
     console.log('aqui se abre la ventana con los datos adquiridos');
-    
+    var url =     "/assets/proyeccionLluvia.html?titulo=Proyecciones" +
+    "&selectEstacion=" +
+    this.e1 +
+    "&selectEstacion2=" +
+    this.e2 +
+    "&selectYYYY1=" +
+    this.y1 +
+    "&selectYYYY2=" +
+    this.y2 +
+    "&selectVisualizacion=" +
+    this.v1;
+    console.log(url);
+
+
+        if (this.v1 == 'Proyeccion'){
+  
+          //var myWindow = window.open(url, "", "scrollbars=1");
+
+        }else
+        if (this.v1 == 'Historico'){
+
+        }else
+        if (this.v1 == 'Promedio'){
+
+        }
 
 
   }  
