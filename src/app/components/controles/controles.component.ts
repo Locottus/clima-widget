@@ -18,7 +18,18 @@ export class ControlesComponent implements OnInit {
   anios: anio[] = [];
   meses: mes[] = [];
   estaciones: estacion[] = [];
+  visualizacion = [{id:1,nombre:'Promedio'},{id:2,nombre:'Historico'},{id:3,nombre:'Proyeccion'}];
+  datos= [{id:1,nombre:'Lluvia'},{id:2,nombre:'Temperatura'}];
 
+  //parametros para abrir la ventana de datos
+  e1:string ='';
+  e2:string ='';
+  y1:string ='';
+  y2:string ='';
+  v1:string ='';
+  d1:string ='';
+  
+  
   constructor(
     private _as:AniosService,
     private _es:EstacionesService
@@ -40,7 +51,15 @@ export class ControlesComponent implements OnInit {
       this.meses = data;
       console.log(data);
     })
-  
+    
   }
+
+
+  openNewWindow():void {
+    console.log('aqui se abre la ventana con los datos adquiridos');
+    
+
+
+  }  
 
 }

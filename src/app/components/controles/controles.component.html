@@ -5,9 +5,11 @@
         <div class="input-group-append">
           <label class="input-group-text" for="selectEstacion" >Estacion Primaria</label>
         </div>
-        <select class="custom-select" id="selectEstacion" onchange="">
-          <option [ngValue]="null" disabled>Seleccione Estacion</option>
-
+        <select class="custom-select" id="selectEstacion" [(ngModel)]="e1"  >
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of estaciones"  [ngValue]="e.estacion"   >
+            {{e.estacion}}
+          </option>
 
         </select>
       </div>
@@ -16,7 +18,11 @@
         <div class="input-group-append">
           <label class="input-group-text" for="selectEstacion2" >*Estacion a Comparar</label>
         </div>
-        <select class="custom-select" id="selectEstacion2">
+        <select class="custom-select" id="selectEstacion2" [(ngModel)]="e2" >
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of estaciones"  [ngValue]="e.estacion"   >
+            {{e.estacion}}
+          </option>
           
         </select>
       </div>
@@ -27,7 +33,12 @@
         <div class="input-group-append">
           <label class="input-group-text" for="selectYYYY1" >Año Inicial</label>
         </div>
-        <select  class="custom-select" id="selectYYYY1" >
+        <select  class="custom-select" id="selectYYYY1" [(ngModel)]="y1" >
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of anios"  [ngValue]="e.year"   >
+            {{e.year}}
+          </option>
+
         </select>
       </div>
 
@@ -35,7 +46,12 @@
         <div class="input-group-append">
           <label class="input-group-text" for="selectYYYY2" >Año Final</label>
         </div>
-        <select class="custom-select" id="selectYYYY2"  >
+        <select class="custom-select" id="selectYYYY2" [(ngModel)]="y2" >
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of anios"  [ngValue]="e.year"   >
+            {{e.year}}
+          </option>
+
         </select>
       </div>
 
@@ -45,8 +61,12 @@
           <label class="input-group-text" for="selectVisualizacion" >Visualizacion</label
           >
         </div>
-        <select
-          class="custom-select"  id="selectVisualizacion"  >
+        <select  class="custom-select"  id="selectVisualizacion" [(ngModel)]="v1" >
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of visualizacion"  [ngValue]="e.nombre"   >
+            {{e.nombre}}
+          </option>
+
         </select>
       </div>
 
@@ -55,20 +75,28 @@
         <div class="input-group-append">
           <label class="input-group-text" for="selectDatos" >Datos</label>
         </div>
-        <select class="custom-select" id="selectDatos" >         
+        <select class="custom-select" id="selectDatos" [(ngModel)]="d1" >         
+          <option [ngValue]="null" ></option>
+          <option *ngFor="let e of datos"  [ngValue]="e.nombre"   >
+            {{e.nombre}}
+          </option>
+
         </select>
       </div>
 
-      <button type="button" class="btn btn-primary" onclick="alert('aqui va un reporte')">Ver Datos</button>
+      <button type="button" class="btn btn-primary" (click)="openNewWindow()">Ver Datos</button>
       <div>
         <p> <b>* campo opcional</b></p>
       </div>
       
 </div>
 
+<!--
 <ul *ngIf='estaciones.length > 0'>
   <li *ngFor='let e of estaciones'>
     {{e.estacion}}
   </li>
 
 </ul>
+
+-->
