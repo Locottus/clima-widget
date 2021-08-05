@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +57,8 @@ import { ForecastComponent } from './components/forecast/forecast.component';
     ClimaGeneralService,
     ClimaDetalleService, 
     EstacionesService, 
-    AniosService
+    AniosService,
+    Location, {provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

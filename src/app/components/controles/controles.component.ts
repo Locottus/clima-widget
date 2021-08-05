@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 import { AniosService } from 'src/app/services/anios.service';
 import { EstacionesService } from 'src/app/services/estaciones.service';
@@ -13,7 +14,8 @@ import { estacion } from 'src/app/models/estacion';
   styleUrls: ['./controles.component.css']
 })
 export class ControlesComponent implements OnInit {
-
+  
+  
 //climaData: ClimaGeneral | undefined;
   anios: anio[] = [];
   meses: mes[] = [];
@@ -29,11 +31,16 @@ export class ControlesComponent implements OnInit {
   v1:string ='';
   d1:string ='';
   
+  location: any ;
   
   constructor(
+    private _location: Location,
     private _as:AniosService,
     private _es:EstacionesService
-  ) { }
+  ) { 
+    this.location = location;
+    console.log(this.location.href);
+  }
 
   ngOnInit(): void {
 
@@ -57,32 +64,53 @@ export class ControlesComponent implements OnInit {
 
   openNewWindow():void {
     console.log('aqui se abre la ventana con los datos adquiridos');
-    var url =     "/assets/proyeccionLluvia.html?titulo=Proyecciones" +
-    "&selectEstacion=" +
-    this.e1 +
-    "&selectEstacion2=" +
-    this.e2 +
-    "&selectYYYY1=" +
-    this.y1 +
-    "&selectYYYY2=" +
-    this.y2 +
-    "&selectVisualizacion=" +
-    this.v1;
-    console.log(url);
 
-
-        if (this.v1 == 'Proyeccion'){
-  
-          //var myWindow = window.open(url, "", "scrollbars=1");
-
-        }else
-        if (this.v1 == 'Historico'){
-
-        }else
-        if (this.v1 == 'Promedio'){
-
+    if (this.e1 == '' || this.y1 == '' || this.y2 == '' || this.v1 == '' || this.d1 == '' ){
+      console.log('seleccione todos los campos');
+      alert('seleccione todos los campos obligatorios');
+    }else{
+      var pagina:string = '';
+      if (this.v1 == 'Proyeccion'){
+        if (this.d1 == 'Lluvia'){
+          pagina = 'proyeccionLluvia.html';
+        }
+        if (this.d1 == 'Temperatura'){
+          pagina = 'proyeccionTemperatura.html';
         }
 
+      }else if (this.v1 == 'Historico'){
+        if (this.d1 == 'Lluvia'){
+          pagina = 'lluvia.html';
+        }
+        if (this.d1 == 'Temperatura'){
+          pagina = 'temperatura.html';
+        }
+
+      }else if (this.v1 == 'Promedio'){
+        if (this.d1 == 'Lluvia'){
+          pagina = '';
+        }
+        if (this.d1 == 'Temperatura'){
+          pagina = '';
+        }
+
+      }
+
+      var url = this.location.href +  "assets/" + pagina + "?titulo=Proyecciones" +
+      "&selectEstacion=" +
+      this.e1 +
+      "&selectEstacion2=" +
+      this.e2 +
+      "&selectYYYY1=" +
+      this.y1 +
+      "&selectYYYY2=" +
+      this.y2 +
+      "&selectVisualizacion=" +
+      this.v1;
+      console.log(url);
+      var myWindow = window.open(url, "", "scrollbars=1");
+  
+    }
 
   }  
 
