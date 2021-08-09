@@ -88,10 +88,10 @@ export class ControlesComponent implements OnInit {
 
       }else if (this.v1 == 'Promedio'){
         if (this.d1 == 'Lluvia'){
-          pagina = '';
+          pagina = 'lluvia.html';
         }
         if (this.d1 == 'Temperatura'){
-          pagina = '';
+          pagina = 'temperatura.html';
         }
 
       }
